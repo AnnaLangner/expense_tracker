@@ -1,0 +1,23 @@
+[
+    {
+        "date": "2026-01-01",
+        "amount": 100.0,
+        "currency": "PLN",
+        "category": "Food",
+        "description": "Lunch"
+    },
+    {
+        "date": "2026-01-02",
+        "amount": 100.0,
+        "currency": "PLN",
+        "category": "Food",
+        "description": "Dinner"
+    },
+    {
+        "date": "2026-01-05",
+        "amount": 20.0,
+        "currency": "PLN",
+        "category": "Transport",
+        "description": "Bus"
+    }
+]
