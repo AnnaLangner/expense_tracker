@@ -3,6 +3,7 @@ from datetime import date
 from pathlib import Path
 from .models import Expense
 from .storage import load_expenses, save_expenses
+from typing import Optional
 
 
 def add_expense(
@@ -41,6 +42,30 @@ def add_expense(
         save_expenses(expenses)
 
     return expense
+
+
+def filter_expenses(
+    expenses: list[Expense],
+    category: Optional[str] = None,
+    currency: Optional[str] = None,
+    date_from: Optional[date] = None,
+    date_to: Optional[date] = None
+) -> list[Expense]:
+    filtered = expenses
+
+    if category:
+        filtered = [e for e in filtered if e.category == category]
+
+    if currency:
+        filtered = [e for e in filtered if e.currency == currency]
+
+    if date_from:
+        filtered = [e for e in filtered if e.date >= date_from]
+
+    if date_to:
+        filtered = [e for e in filtered if e.date <= date_to]
+
+    return filtered
 
 
 def get_all_expenses(file_path: Path | None = None) -> list[Expense]:
