@@ -1,5 +1,6 @@
 from app.logic import get_all_expenses, filter_expenses
 from app.reports import total_expenditures, total_per_category
+from app.analytics import plot_expenses_by_category
 
 
 def main():
@@ -9,6 +10,9 @@ def main():
 
     print("Total Food expenses:", total_expenditures(food_expenses))
     print("Total per category:", total_per_category(expenses))
+
+    pln_expenses = filter_expenses(expenses, currency="PLN")
+    plot_expenses_by_category(pln_expenses)
 
 
 if __name__ == "__main__":
