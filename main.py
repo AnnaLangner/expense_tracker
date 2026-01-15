@@ -1,18 +1,11 @@
-from app.logic import get_all_expenses, filter_expenses
-from app.reports import total_expenditures, total_per_category
-from app.analytics import plot_expenses_by_category
+import tkinter as tk
+from app.gui import ExpenseTrackerGUI
 
 
 def main():
-    expenses = get_all_expenses()
-
-    food_expenses = filter_expenses(expenses, category="Food")
-
-    print("Total Food expenses:", total_expenditures(food_expenses))
-    print("Total per category:", total_per_category(expenses))
-
-    pln_expenses = filter_expenses(expenses, currency="PLN")
-    plot_expenses_by_category(pln_expenses)
+    root = tk.Tk()
+    app = ExpenseTrackerGUI(root)
+    root.mainloop()
 
 
 if __name__ == "__main__":
