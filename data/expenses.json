@@ -26,5 +26,19 @@
         "currency": "PLN",
         "category": "Food",
         "description": "Lunch"
+    },
+    {
+        "date": "2026-01-15",
+        "amount": 30.0,
+        "currency": "PLN",
+        "category": "Transport",
+        "description": "taxi"
+    },
+    {
+        "date": "2026-01-19",
+        "amount": 56.0,
+        "currency": "PLN",
+        "category": "Clothes",
+        "description": "dress"
     }
 ]
