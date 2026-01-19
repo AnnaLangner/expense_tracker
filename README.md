@@ -29,6 +29,14 @@ An expense tracking app with features like adding, editing, filtering, reporting
 expense_tracker/
 │
 ├── app/
+│   ├── static   
+│   │      └── charts
+│   │            └── expenses_by_category.png
+│   ├── templates
+│   │      ├── add.html    
+│   │      ├── expenses.html      
+│   │      ├── home.html           
+│   │      └── report.html  
 │   ├── __init__.py
 │   ├── models.py    
 │   ├── storage.py     
@@ -48,4 +56,12 @@ expense_tracker/
 ├── requirements.txt
 └── README.md
 
+```
+
+### Run project
+To run the project you need to download the repo and run it locally using the commands:
+
+The web application in Flask technology is launched.
+```
+python main.py --web 
 ```
