@@ -40,5 +40,12 @@
         "currency": "PLN",
         "category": "Clothes",
         "description": "dress"
+    },
+    {
+        "date": "2026-01-19",
+        "amount": 23.0,
+        "currency": "PLN",
+        "category": "Food",
+        "description": "snack"
     }
 ]
