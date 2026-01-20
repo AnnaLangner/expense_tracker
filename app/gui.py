@@ -3,7 +3,26 @@ from tkinter import messagebox
 from datetime import date
 from tkinter.ttk import Treeview
 from app.logic import add_expense, get_all_expenses
-from app.analytics import plot_expenses_by_category
+import matplotlib
+matplotlib.use("TkAgg")
+import matplotlib.pyplot as plt
+from app.reports import total_per_category
+
+
+def plot_expenses_by_category_gui(expenses, title="Expenses by Category"):
+    totals = total_per_category(expenses)
+
+    categories = list(totals.keys())
+    amounts = list(totals.values())
+
+    plt.figure(figsize=(8, 5))
+    plt.bar(categories, amounts, color="skyblue")
+    plt.xlabel("Category")
+    plt.ylabel("Amount")
+    plt.title(title)
+    plt.xticks(rotation=45, ha="right")
+    plt.tight_layout()
+    plt.show()
 
 
 class ExpenseTrackerGUI:
@@ -126,4 +145,4 @@ class ExpenseTrackerGUI:
             messagebox.showwarning("No data", "No expenses to display")
             return
 
-        plot_expenses_by_category(expenses)
+        plot_expenses_by_category_gui(expenses)
