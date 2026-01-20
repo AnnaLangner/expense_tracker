@@ -58,10 +58,50 @@ expense_tracker/
 
 ```
 
-### Run project
-To run the project you need to download the repo and run it locally using the commands:
+### Desktop Version (GUI)
 
-The web application in Flask technology is launched.
-```
-python main.py --web 
-```
+The desktop version of the application is implemented using the Tkinter library.
+The interface allows users to:
+
+* enter expense data via a form,
+
+* display a list of expenses in a table (Treeview),
+
+* generate a chart of expenses grouped by category.
+
+The GUI uses the same business logic as the web version of the application.
+
+### Web Version (Flask)
+
+The web version of the application is built using the Flask framework.
+It provides the following endpoints:
+
+* / – home page with navigation,
+
+* /add – expense entry form,
+
+* /expenses – list of all expenses,
+
+* /report – expense report and chart.
+
+Charts are generated using the matplotlib library and saved as PNG images,
+which are then displayed in the web browser.
+
+### Analytics and Reports
+
+The application offers basic data analytics:
+
+* summing expenses by category,
+
+* visualizing data in the form of bar charts.
+
+By using the Agg backend in matplotlib, charts can be generated in a
+server environment without a graphical user interface.
+
+### Running the Application
+
+The application can be run in two modes:
+
+* GUI (desktop): `python main.py`
+
+* WEB (Flask): `python main.py --web`
